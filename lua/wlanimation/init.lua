@@ -66,6 +66,7 @@ M.animation = function(opts)
         highlights = hl_list,
         interval = opts.interval,
         delay = opts.delay,
+        on_colorscheme = opts.on_colorscheme,
         timeout = opts.timeout,
     })
     return check_enter(anim)
@@ -101,6 +102,7 @@ M.on_vimenter = function()
     _G.WindLine.anim_pause = Animation.pause_all
     _G.WindLine.anim_run = Animation.run_all
     _G.WindLine.anim_stop = Animation.stop_all
+    _G.WindLine.anim_on_color = Animation.on_colorscheme
     _G.WindLine.anim_reset = function()
         -- remove all animtion and put the animtation on waiting to rerun on
         -- setup

@@ -114,6 +114,13 @@ local function stop_all()
     _G.WindLine.anim_list = {}
 end
 
+local function on_colorscheme(colors)
+    for _, ani in pairs(_G.WindLine.anim_list) do
+        if ani.on_colorscheme then
+            ani.on_colorscheme(colors)
+        end
+    end
+end
 -- only use on_vimenter
 local function run_all()
     if _G.WindLine.anim_list then
@@ -128,6 +135,7 @@ end
 return {
     new = Animation.new,
     pause_all = pause_all,
+    on_colorscheme = on_colorscheme,
     run_all = run_all,
     stop_all = stop_all,
 }

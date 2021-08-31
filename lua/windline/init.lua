@@ -160,7 +160,9 @@ M.get_colors = function()
 end
 
 M.on_colorscheme = function(colors)
-    setup_hightlight(colors or M.get_colors())
+    colors = colors or M.get_colors()
+    setup_hightlight(colors)
+    if M.anim_on_color then M.anim_on_color(colors) end
 end
 
 M.on_vimenter = function()
